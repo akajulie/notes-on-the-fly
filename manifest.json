@@ -1,0 +1,16 @@
+{
+    "manifest_version" : 2,
+    "name": "Notes On the FLy",
+    "version": 0.01,
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    }
+}
