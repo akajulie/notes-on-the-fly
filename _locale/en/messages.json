@@ -1,0 +1,19 @@
+{   
+    "_comment": "The messages can be refered in the app as __MSG_name__ or chrome.i18n.getMessage('name')",
+
+    "EXAMPLE_MESSAGE": {
+        "message": "This $IS$ the message: $@meow_mEoW_123$",
+        "description": "Just as a reference for new messages that can be added",
+        "placeholders": {
+            "is": {
+                "content": "is"
+            },
+            "meow_meow_123": {
+                "content": "$1",
+                "example": "Random Stuff"
+            }
+        }
+    }
+
+
+}

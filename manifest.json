@@ -1,16 +1,26 @@
 {
     "manifest_version" : 2,
-    "name": "Notes On the FLy",
-    "version": 0.01,
+    "name": "Notes On the Fly",
+    "version": "0.1",
     "content_scripts": [
         {
             "matches": [
                 "<all_urls>"
             ],
-            "js": ["content.js"]
+            "js": ["content.js"],
+            "css": ["index.css"]
         }
     ],
     "background": {
         "scripts": ["background.js"]
+    },
+    "permissions": [
+        "contextMenus",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "note-16.png",
+        "48": "note-48.png",
+        "128": "note-100.png"
     }
 }
