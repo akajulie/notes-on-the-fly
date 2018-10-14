@@ -21,18 +21,17 @@ function getPositionY() {
 function createNewNote(id){
     let note = `
                 <div class="meow" id=`+ id +`>
-                    <header style="height: auto">
-                        <h1>Meow</h1>
+                    <header>
+                        <button id="NOTF-delete-button">Delet Tis</button>
+                        <button id="NOTF-minimize-button">Minimiz Tis</button>
                     </header>
                     <main>
-                        <button id="NOTF-delete-button">Delet Tis</button>
-                        <textarea name="note" id="note-textarea" cols="30" rows="10">
-                        Hello there, General n00bie
+                        <textarea id="NOTF-note-textarea" class="NOTF-note-textarea" cols="30" rows="10">
+                            Hello there, General n00bie
                         </textarea>
                     </main>
                 </div>
                 `;
-    console.log("note", note);
     return note;
 }
 
@@ -47,6 +46,7 @@ function insertNoteIntoDOM(note) {
 function meowTheNote(note) {
     setNotePosition(note, getPositionX(), getPositionY());
     addDeleteButtonFunctionality(note);
+    addMinimizeButtonFunctionality(note);
 }
 
 function setNotePosition(note, positionX, positionY) {
@@ -55,11 +55,17 @@ function setNotePosition(note, positionX, positionY) {
 }
 
 function addDeleteButtonFunctionality(note) {
+    function deleteNote(note) {
+        note.remove();
+    }
     note.querySelector("#NOTF-delete-button").onclick = function(){ deleteNote(note) };
 }
 
-function deleteNote(note) {
-    note.remove();
+function addMinimizeButtonFunctionality(note) {
+    function minimizeNote(note) {
+        note.querySelector("#NOTF-note-textarea").classList.toggle("OTF-minimize-note");
+    }
+    note.querySelector("#NOTF-minimize-button").onclick = function(){ minimizeNote(note) }
 }
 
 document.addEventListener('contextmenu', onMouseUpdate, false);
